@@ -1,0 +1,355 @@
+[
+    {
+        "pattern": "Pesquisar obras de (?P<author>.+) como autor desde (?P<year>\\d{4})",
+        "replacement": "PAU={author} and DP>={year}"
+    },
+    {
+        "pattern": "Pesquisar documentos com '(.+)' no título desde (?P<year>\\d{4})",
+        "replacement": "PTI={title}% and DP>={year}"
+    },
+    {
+        "pattern": "Pesquisar textos sobre (?P<topic>.+) desde (?P<year>\\d{4})",
+        "replacement": "PAL={topic}% and DP>={year}"
+    },
+    {
+        "pattern": "Quais são os romances que se passam na era vitoriana e envolvem (?P<character>.+)\\?",
+        "replacement": "TIT={character}"
+    },
+    {
+        "pattern": "Quais são as obras de (?P<author>.+) desde (?P<year>\\d{4})\\?",
+        "replacement": "AUT={author}% AND DP>={year}"
+    },
+        {
+        "pattern": "Quais são os documentos escritos por (?P<author>[A-Z][a-z]+), (?P<firstname>[A-Z][a-z]+)\\?",
+        "replacement": "AUT={author}, {firstname}"
+    },
+    {
+        "pattern": "Pesquisar documentos escritos por (?P<author>[A-Z][a-z]+), (?P<firstname>[A-Z][a-z]+)\\?",
+        "replacement": "AUT={author}, {firstname}"
+    },
+    {
+        "pattern": "Quais são os trabalhos de (?P<author>[A-Z][a-z]+), (?P<firstname>[A-Z][a-z]+)\\?",
+        "replacement": "AUT={author}, {firstname}"
+    },
+    {
+        "pattern": "Quais são os livros escritos por (?P<author>[A-Z][a-z]+), (?P<firstname>[A-Z][a-z]+)\\?",
+        "replacement": "AUT={author}, {firstname}"
+    },
+    {
+        "pattern": "Verificar obras de (?P<author>[A-Z][a-z]+), (?P<firstname>[A-Z][a-z]+)\\?",
+        "replacement": "AUT={author}, {firstname}"
+    },
+    {
+        "pattern": "Mostre me as publicações de (?P<author>[A-Z][a-z]+), (?P<firstname>[A-Z][a-z]+)\\?",
+        "replacement": "AUT={author}, {firstname}"
+    },
+    {
+        "pattern": "Quais são os documentos de (?P<author>[A-Z][a-z]+), (?P<firstname>[A-Z][a-z]+)\\?",
+        "replacement": "AUT={author}, {firstname}"
+    },
+    {
+        "pattern": "Pesquisar obras de (?P<author>[A-Z][a-z]+), (?P<firstname>[A-Z][a-z]+)\\?",
+        "replacement": "AUT={author}, {firstname}"
+    },
+    {
+        "pattern": "Quais são os livros de (?P<author>[A-Z][a-z]+), (?P<firstname>[A-Z][a-z]+)\\?",
+        "replacement": "AUT={author}, {firstname}"
+    },
+        {
+            "pattern": "Pesquisar obras de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os livros de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Mostre me os documentos escritos por (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são as obras de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar publicações de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os livros escritos por (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Mostre me os trabalhos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os documentos escritos por (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar obras de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os trabalhos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar livros de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Mostre me as publicações de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar obras de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os documentos escritos por (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar publicações de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os livros de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Mostre me os trabalhos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar livros de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são as obras de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar publicações de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar livros de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os trabalhos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar livros de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são as obras de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os documentos escritos por (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os trabalhos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar publicações de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os livros de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Mostre me os trabalhos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar obras de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar publicações de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os documentos escritos por (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os livros de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar trabalhos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são as obras de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Mostre me os documentos escritos por (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar publicações de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar livros de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Mostre me os trabalhos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são as obras de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar publicações de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os livros de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Mostre me os documentos escritos por (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são as obras de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar publicações de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os trabalhos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Mostre me os livros de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar publicações de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são as obras de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Mostre me os documentos escritos por (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os livros de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar trabalhos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar publicações de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são as obras de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Mostre me os documentos escritos por (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são os livros de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Verificar publicações de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Pesquisar documentos de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Quais são as obras de (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        },
+        {
+            "pattern": "Mostre me os documentos escritos por (?P<author>.+)\\?",
+            "replacement": "AUT={author}"
+        }
+    
+]
