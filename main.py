@@ -1,15 +1,15 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from transformers import BartTokenizer, BartForConditionalGeneration
+from transformers import T5Tokenizer, T5ForConditionalGeneration
 import torch
 
 # Initialize FastAPI app
 app = FastAPI()
 
 # Load the best model checkpoint
-trained_model='./OPAC/best_fine_tuned_bart_model'
-tokenizer = BartTokenizer.from_pretrained(trained_model)
-model = BartForConditionalGeneration.from_pretrained(trained_model)
+trained_model = './fine_tuned_t5_model'
+tokenizer = T5Tokenizer.from_pretrained('t5-large')
+model = T5ForConditionalGeneration.from_pretrained(trained_model)
 
 # Check if GPU is available and move model to GPU if it is
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -23,8 +23,10 @@ class QueryRequest(BaseModel):
 def generate_marc_record(question):
     # Combine question and data (modify based on your data structure)
     prompt = question + "\n"
-    input_ids = tokenizer(prompt, return_tensors="pt").input_ids.to(device)
-    generated_ids = model.generate(input_ids)
+    inputs = tokenizer(prompt, return_tensors="pt")
+    input_ids = inputs['input_ids'].to(device)
+    attention_mask = inputs['attention_mask'].to(device)
+    generated_ids = model.generate(input_ids=input_ids, attention_mask=attention_mask, max_length=64, num_beams=4, early_stopping=True)
     generated_marc_record = tokenizer.decode(generated_ids[0], skip_special_tokens=True)
     return generated_marc_record.strip()
 

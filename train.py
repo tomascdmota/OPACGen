@@ -10,7 +10,7 @@ import os
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Load pre-trained BART model and tokenizer
-tokenizer = Tokenizer.from_file("tokenizer_output/tokenizer.json")
+tokenizer = Tokenizer.from_pretrained("facebook/bart-large")
 model = BartForConditionalGeneration.from_pretrained("facebook/bart-large").to(device)
 
 # Define dataset class with padding
