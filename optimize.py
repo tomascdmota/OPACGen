@@ -14,14 +14,14 @@ app = FastAPI()
 
 # Load the dataset
 logger.info("Loading the dataset")
-df = pd.read_csv('cleaned_nl_marc.csv')
+df = pd.read_csv('dataset.csv')
 logger.info(f"Dataset loaded with {len(df)} records")
 logger.info(df.head())
 
 # Load the best model checkpoint
 logger.info("Loading the trained model")
-model_path = './fine_tuned_t5_model'
-tokenizer = T5Tokenizer.from_pretrained('t5-small')
+model_path = './model'
+tokenizer = T5Tokenizer.from_pretrained('t5-base')
 model = T5ForConditionalGeneration.from_pretrained(model_path)
 
 # Check if GPU is available and move model to GPU if it is
@@ -94,9 +94,9 @@ logger.info(f"Dataset split into {train_size} training and {val_size} validation
 
 # Define training arguments
 training_args = TrainingArguments(
-    per_device_train_batch_size=32,
-    per_device_eval_batch_size=32,
-    num_train_epochs=50,
+    per_device_train_batch_size=8,
+    per_device_eval_batch_size=8,
+    num_train_epochs=30,
     logging_dir='./logs',
     logging_steps=100,
     evaluation_strategy='epoch',
@@ -106,7 +106,7 @@ training_args = TrainingArguments(
 )
 
 # Initialize T5 model for sequence-to-sequence with conditional generation
-model = T5ForConditionalGeneration.from_pretrained('t5-small')
+model = T5ForConditionalGeneration.from_pretrained('t5-base')
 
 # Trainer instance
 trainer = Trainer(
@@ -130,21 +130,21 @@ model.save_pretrained(model_path)
 logger.info(f"Model saved to {model_path}")
 
 # Function to generate MARC21 record from a Portuguese question using FastAPI
-def generate_marc_record(question):
-    inputs = tokenizer(question, return_tensors="pt").to(device)
-    input_ids = inputs['input_ids']
-    attention_mask = inputs['attention_mask']
-    generated_ids = model.generate(input_ids=input_ids, attention_mask=attention_mask, max_length=64, num_beams=4, early_stopping=True)
-    generated_marc_record = tokenizer.decode(generated_ids[0], skip_special_tokens=True)
-    return generated_marc_record.strip()
+# def generate_marc_record(question):
+#     inputs = tokenizer(question, return_tensors="pt").to(device)
+#     input_ids = inputs['input_ids']
+#     attention_mask = inputs['attention_mask']
+#     generated_ids = model.generate(input_ids=input_ids, attention_mask=attention_mask, max_length=64, num_beams=4, early_stopping=True)
+#     generated_marc_record = tokenizer.decode(generated_ids[0], skip_special_tokens=True)
+#     return generated_marc_record.strip()
 
-@app.post("/generate-query")
-def generate_marc(request: QueryRequest):
-    try:
-        # Generate the MARC21 record
-        generated_marc_record = generate_marc_record(request.question)
-        logger.info(f"Generated MARC record for query: {request.question}")
-        return {"generated_marc_record": generated_marc_record}
-    except Exception as e:
-        logger.error(f"Error generating MARC record: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+# @app.post("/generate-query")
+# def generate_marc(request: QueryRequest):
+#     try:
+#         # Generate the MARC21 record
+#         generated_marc_record = generate_marc_record(request.question)
+#         logger.info(f"Generated MARC record for query: {request.question}")
+#         return {"generated_marc_record": generated_marc_record}
+#     except Exception as e:
+#         logger.error(f"Error generating MARC record: {str(e)}")
+#         raise HTTPException(status_code=500, detail=str(e))

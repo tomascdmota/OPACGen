@@ -7,8 +7,8 @@ import torch
 app = FastAPI()
 
 # Load the best model checkpoint
-trained_model = './fine_tuned_t5_model'
-tokenizer = T5Tokenizer.from_pretrained('t5-large')
+trained_model = './model'
+tokenizer = T5Tokenizer.from_pretrained('t5-base')
 model = T5ForConditionalGeneration.from_pretrained(trained_model)
 
 # Check if GPU is available and move model to GPU if it is
